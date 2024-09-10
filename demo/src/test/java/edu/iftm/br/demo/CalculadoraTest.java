@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
     @Test
      void testConstrutorSemParametro() {
         Calculadora calc = new Calculadora();
-
+        assertEquals(1, calc.getMemoria(), "A memória inicial deve ser 1");
     }
 
     @Test

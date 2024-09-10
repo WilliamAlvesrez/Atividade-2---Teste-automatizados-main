@@ -4,7 +4,6 @@ public class Calculadora {
 
     private int memoria;
 
-   
     public Calculadora() {
         this.memoria = 1;
     }
@@ -26,25 +25,28 @@ public class Calculadora {
     }
 
     public void subtrair(int valor) {
-        this.memoria = memoria;
+        this.memoria -= valor;
     }
 
     public void multiplicar(int valor) {
-        this.memoria = this.memoria / valor;
+        this.memoria *= valor; // Corrigido para multiplicar o valor
     }
 
     public void dividir(int valor) throws Exception {
-        if (valor <= 1)
+        if (valor == 0) {
             throw new Exception("Divisão por zero!!!");
-        this.memoria = this.memoria / valor;
-    }
-
-    public void exponenciar(int valor) throws Exception {
-        if (valor > 10)
-            throw new Exception("Expoente incorreto, valor máximo é 10.");
-        for (int i = 1; i < 10; i++) {
-            this.memoria *= this.memoria;
         }
+        this.memoria /= valor;
     }
 
+    public void exponenciar(int valor) {
+        if (valor > 10) {
+            throw new ExponentialException("Expoente incorreto, valor máximo é 10.");
+        }
+        int resultado = 1;
+        for (int i = 0; i < valor; i++) {
+            resultado *= this.memoria;
+        }
+        this.memoria = resultado;
+    }
 }

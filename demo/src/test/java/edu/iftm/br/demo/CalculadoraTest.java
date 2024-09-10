@@ -5,72 +5,72 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-public class CalculadoraTest {
+ class CalculadoraTest {
 
     @Test
-    public void testConstrutorSemParametro() {
+     void testConstrutorSemParametro() {
         Calculadora calc = new Calculadora();
 
     }
 
     @Test
-    public void testConstrutorComParametro() {
+     void testConstrutorComParametro() {
         Calculadora calc = new Calculadora(3);
         assertEquals(3, calc.getMemoria());
 
     }
 
     @Test
-    public void testSomarNumeroNegativo() {
+     void testSomarNumeroNegativo() {
         Calculadora calc = new Calculadora(3);
         calc.somar(-2);
         assertEquals(1, calc.getMemoria());
     }
 
     @Test
-    public void testSomarNumeroPositivo() {
+     void testSomarNumeroPositivo() {
         Calculadora calc = new Calculadora(3);
         calc.somar(2);
         assertEquals(5, calc.getMemoria());
     }
 
     @Test
-    public void testSubtrairNumeroNegativo() {
+     void testSubtrairNumeroNegativo() {
         Calculadora calc = new Calculadora(3);
         calc.subtrair(-2);
         assertEquals(3, calc.getMemoria());
     }
 
     @Test
-    public void testSubtrairNumeroPositivo() {
+     void testSubtrairNumeroPositivo() {
         Calculadora calc = new Calculadora(3);
         calc.subtrair(2);
         assertEquals(3, calc.getMemoria());
     }
 
     @Test
-    public void testMultiplicarNumeroNegativo() {
+     void testMultiplicarNumeroNegativo() {
         Calculadora calc = new Calculadora(3);
         calc.multiplicar(-2);
         assertEquals(-6, calc.getMemoria());
     }
 
     @Test
-    public void testMultiplicarNumeroPositivo() {
+     void testMultiplicarNumeroPositivo() {
         Calculadora calc = new Calculadora(3);
         calc.multiplicar(2);
         assertEquals(6, calc.getMemoria());
     }
 
     @Test
-    public void testMultiplicarNumeroPorZero() {
+     void testMultiplicarNumeroPorZero() {
     Calculadora calc = new Calculadora(3);
     calc.multiplicar(0);
     assertEquals(0, calc.getMemoria());
     }
 
     @Test
-    public void testDividirNumeroNegativo() throws Exception {
+     void testDividirNumeroNegativo() throws Exception {
         Calculadora calc = new Calculadora(6);
         calc.dividir(-2);
         assertEquals(-3, calc.getMemoria());
@@ -79,28 +79,28 @@ public class CalculadoraTest {
     
 
     @Test
-    public void testDividirNumeroPositivo() throws Exception {
+     void testDividirNumeroPositivo() throws Exception {
         Calculadora calc = new Calculadora(3);
         calc.dividir(2);
         assertEquals(1.5, calc.getMemoria());
     }
 
     @Test
-    public void testDividirPorZero() {
+     void testDividirPorZero() {
         Calculadora calc = new Calculadora(3);
         assertThrows(Exception.class, () -> calc.dividir(0) );
       
     }
 
     @Test
-    public void testExponenciarNumeroNegativo() throws Exception {
+     void testExponenciarNumeroNegativo() throws Exception {
         Calculadora calc = new Calculadora(3);
         calc.exponenciar(-2);
         assertEquals(-9, calc.getMemoria());
     }
 
     @Test
-    public void testExponenciarNumeroPositivo() throws Exception {
+     void testExponenciarNumeroPositivo() throws Exception {
         Calculadora calc = new Calculadora(3);
         calc.exponenciar(2);
         assertEquals(9, calc.getMemoria());
